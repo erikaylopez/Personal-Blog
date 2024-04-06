@@ -7,7 +7,7 @@
     <link rel="stylesheet" href=".\assets\css\reset.css" />
     <link rel="stylesheet" href=".\assets\css\form.css" />
     <body>
-        <form>
+        <form id ="form">
           <h1>What's on your mind?</h1>
           <p>
             
@@ -22,46 +22,21 @@
             <input id="title" type="title" placeholder="" />
           </p>
           <p>
-            <label for="Content">Content</label>
-            <textarea id="Content" placeholder=""></textarea>
+            <label for="content">Content</label>
+            <textarea id="content" placeholder=""></textarea>
           </p>
                
         </form>
         <h3 class="submit"></h3>
       </div>
 
-      <script src=".\assets\js\form.js"></script>
+     
     </head>
     <body>
         <button id="redirectButton">SUBMIT</button>
-    
-        <script>
-            const redirectButton = document.getElementById('redirectButton');
-    
-            redirectButton.addEventListener('click', function() {
-                window.location.href = 'file:///C:/Users/eylop/bootcamp/personal-blog/Personal-Blog/blog.html'; // Replace this URL with the desired destination
-            });
-        </script>
-  
 
-  <div id="error-message" style="color: red; display: none;">Please complete all fields.</div>
 
-  <script>
-    const form = document.getElementById('form');
-    const errorMessage = document.getElementById('error-message');
-
-    form.addEventListener('submit', function(event) {
-      const username = document.getElementById('username').value;
-      const title = document.getElementById('title').value;
-      const content = document.getElementById('content').value;
-
-      if (!username || !title || !content) {
-        event.preventDefault(); // Prevent form submission
-        errorMessage.style.display = 'block'; // Show error message
-      }
-    });
-  </script>
-    
+        <script src=".\assets\js\index.js"></script>
     </body>
   </html>
   

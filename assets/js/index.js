@@ -1,40 +1,46 @@
-const username = document.getElementById('username');
-const title = document.getElementById('title');
-const content = document.getElementById('content');
-const submitButton = document.getElementById('submit');
-
-// submitButton.addEventListener('click', function (event) {
-//     event.preventDefault();
-  function savelastPost() {
-
-    const lastPost = {
-        username: username.value,
-        title: title.value,
-       
-      };
-
-      localStorage.setItem('lastPost', JSON.stringify(lastPost));
- 
-}
-  
-function renderLastPost() {
-    const lastPost = JSON.parse(localStorage.getItem('post'));
     
-    if (lastPost !== null) {
-      document.getElementById('.username').innerHTML = lastPost.username;
-      document.getElementById('.title').innerHTML = lastPost.title;
-      document.getElementById('.content').innerHTML = lastPost.content;  
-    }
-  }
+            const redirectButton = document.getElementById('redirectButton');
+    
+          //  l-blog/Personal-Blog/blog.html'; // Replace this URL with the desired destination
+          //   });
+       
+          function savelastPost(username,title,content) {
+            console.log(username,title,content)
+            const lastPost = {
+                username: username,
+                title: title,
+               
+              };
+        
+              localStorage.setItem('lastPost', JSON.stringify(lastPost));
+         
+        }
 
-  submitButton.addEventListener('click', function (event) {
-    event.preventDefault();
-    savelastPost();
-    renderLastPost();
-  });
+  //<div id="error-message" style="color: red; display: none;">Please complete all fields.</div>
+
   
-  function init() {
-    // When the init function is executed, the code inside renderLastGrade function will also execute
-    renderLastPost();
-  }
-  init();
+    const form = document.getElementById('form');
+    const errorMessage = document.getElementById('error-message');
+
+    redirectButton.addEventListener('click', function(event) {
+      event.preventDefault(); // Prevent form submission
+      console.log("hello")
+      const username = document.getElementById('username').value;
+      const title = document.getElementById('title').value;
+      const content = document.getElementById('content').value;
+      console.log("")
+      savelastPost(username,title,content)
+      if (!username || !title || !content) {
+        window.alert("Please complete the form")
+        // errorMessage.st
+        //  redirectButton.addEventListener('click', function() {
+        //         window.location.href = '../../blog.html' 
+                //= 'block'; // Show error message
+      // })
+    } else{
+      window.location.href = './blog.html' 
+
+    }
+  
+    });
+ 
