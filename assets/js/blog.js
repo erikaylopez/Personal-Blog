@@ -1,28 +1,81 @@
-const username = document.getElementById('username');
-const title = document.getElementById('title');
-const content = document.getElementById('content');
-const submitButton = document.getElementById('submit');
+const lastPostUsername = document.querySelector('#lastPost-username');
+const lastPostTitle = document.querySelector('#lastPost-title');
+const lastPostContent = document.querySelector('#lastPost-content');
+const lastPostCountSpan = document.querySelector('#lastPost-count');
 
-
+const lastPost = [];
+console.log(mypost)
   
 function renderLastPost() {
-    const lastPost = JSON.parse(localStorage.getItem('post'));
-    
-    if (lastPost !== null) {
-      document.getElementById('.username').innerHTML = lastPost.username;
-      document.getElementById('.title').innerHTML = lastPost.title;
-      document.getElementById('.content').innerHTML = lastPost.content;  
-    }
-  }
+    lastPostContent.innerHTML = '';
+    lastPostCountSpan.textContent = lastPost.length;
 
-  submitButton.addEventListener('click', function (event) {
+    for (let i = 0; i < lastPost.length; i++) {
+        const lastPost = lastPost [i];
+
+        const li = document.createElement('li');
+        li.textContent = lastPost;
+        li.setAttribute('data-index',i);
+
+        const submitButton = document.createElement('button');
+        submitButton.textContent = 'complete' ;
+
+        li.apprehendchild(button);
+        lastPost.apprehendchild(li);
+
+    }
+}
+
+function init () {
+
+    const storedlastPost = JSON.parse(localStorage.getItem('lastPost'));
+
+    if (storedlastPost !== null) {
+        lastPost = storedlastPost;
+    }
+
+    renderLastPost();
+
+}
+
+function storedlastPost() {
+    localStorage.setItem('lastPost', JSON.stringify(lastPost));
+
+}
+
+lastPostForm.addEventListener('submit', function (event) {
     event.preventDefault();
-    savelastPost();
+
+    const lastPostText = lastPostInput.value.trim();
+
+    if (lastPostText === '') {
+        return;
+    }
+
+    lastPost.push(lastPostText);
+    lastPostInput.value = '';
+
+    storelastPost();
     renderLastPost();
-  });
+
+});
+
+lastPostList.addEventListener('click', function (event) {
+    const element = event.target;
   
-  function init() {
-    // When the init function is executed, the code inside renderLastGrade function will also execute
-    renderLastPost();
-  }
-  init();
+    // Checks if element is a button
+    if (element.matches('button') === true) {
+      // Get its data-index value and remove the todo element from the list
+      const index = element.parentElement.getAttribute('data-index');
+      todos.splice(index, 1);
+    
+
+storeTodos();
+    renderTodos();
+    }
+});
+// Calls init to retrieve data and render it to the page on load
+init();
+
+
+
