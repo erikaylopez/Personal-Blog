@@ -1,9 +1,10 @@
+
 const lastPostUsername = document.querySelector('#lastPost-username');
 const lastPostTitle = document.querySelector('#lastPost-title');
 const lastPostContent = document.querySelector('#lastPost-content');
 const lastPostCountSpan = document.querySelector('#lastPost-count');
 
-const lastPost = [];
+const LastPost = [];
 console.log(mypost)
   
 function renderLastPost() {
