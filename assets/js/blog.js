@@ -1,11 +1,11 @@
 
 const lastPostUsername = document.querySelector('#lastPost-username');
-const lastPostTitle = document.querySelector('#lastPost-title');
+const lastPostTitle = document.querySelector('#blogTitle');
 const lastPostContent = document.querySelector('#lastPost-content');
 const lastPostCountSpan = document.querySelector('#lastPost-count');
 
 const LastPost = [];
-console.log(mypost)
+
   
 function renderLastPost() {
     lastPostContent.innerHTML = '';
@@ -29,52 +29,53 @@ function renderLastPost() {
 
 function init () {
 
-    const storedlastPost = JSON.parse(localStorage.getItem('lastPost'));
+    const storeduserddetails = JSON.parse(localStorage.getItem('userdetails'));
+console.log(storeduserddetails)
+//lastPostTitle.value = storeduserddetails.title
+    // if (storedlastPost !== null) {
+    //     lastPost = storedlastPost;
+    // }
 
-    if (storedlastPost !== null) {
-        lastPost = storedlastPost;
-    }
-
-    renderLastPost();
-
-}
-
-function storedlastPost() {
-    localStorage.setItem('lastPost', JSON.stringify(lastPost));
+    // renderLastPost();
 
 }
 
-lastPostForm.addEventListener('submit', function (event) {
-    event.preventDefault();
+// function storedlastPost() {
+//     localStorage.setItem('lastPost', JSON.stringify(lastPost));
 
-    const lastPostText = lastPostInput.value.trim();
+// }
 
-    if (lastPostText === '') {
-        return;
-    }
+// lastPostForm.addEventListener('submit', function (event) {
+//     event.preventDefault();
 
-    lastPost.push(lastPostText);
-    lastPostInput.value = '';
+//     const lastPostText = lastPostInput.value.trim();
 
-    storelastPost();
-    renderLastPost();
+//     if (lastPostText === '') {
+//         return;
+//     }
 
-});
+//     lastPost.push(lastPostText);
+//     lastPostInput.value = '';
 
-lastPostList.addEventListener('click', function (event) {
-    const element = event.target;
+//     storelastPost();
+//     renderLastPost();
+
+// });
+
+// lastPostList.addEventListener('click', function (event) {
+//     const element = event.target;
   
-    // Checks if element is a button
-    if (element.matches('button') === true) {
-      // Get its data-index value and remove the todo element from the list
-      const index = element.parentElement.getAttribute('data-index');
-      todos.splice(index, 1);
+//     // Checks if element is a button
+//     if (element.matches('button') === true) {
+//       // Get its data-index value and remove the todo element from the list
+//       const index = element.parentElement.getAttribute('data-index');
+//       todos.splice(index, 1);
     
 
-storeTodos();
-    renderTodos();
-    }
-});
+// storeTodos();
+//     renderTodos();
+//     }
+// });
 // Calls init to retrieve data and render it to the page on load
 init();
 
