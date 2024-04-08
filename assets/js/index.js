@@ -32,11 +32,7 @@ redirectButton.addEventListener('click', function (event) {
   savelastPost(username, title, content)
   if (!username || !title || !content) {
     window.alert("Please complete the form")
-    // errorMessage.st
-    //  redirectButton.addEventListener('click', function() {
-    //         window.location.href = '../../blog.html' 
-    //= 'block'; // Show error message
-    // })
+  
   } else {
     let blogs = JSON.parse(localStorage.getItem('userdetails'));
     const blogdetails = {

@@ -72,3 +72,8 @@ textarea {
     background-color: #e0cedb;
     color: white;
 }
+
+.dark-mode {
+    background-color: black;
+    color: white;
+  }

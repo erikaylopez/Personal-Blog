@@ -48,52 +48,73 @@
         <script src="./assets/js/blog.js"></script>
 </body>
 
+<style></style>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- <body>
-        <form>
-          <h1>My First Blog</h1>
-          <p>
-          </p>
-          <p>
-            <label for="Blog Title">Blog Title</label>
-            <textarea id="Blog Title" name="Blog Title" rows="4" cols="50">.</textarea>
-          </p>
-          <p>
-            <label  for="title2">Title 2</label>
-            <input id="title2" type="title2" placeholder="" />
-          </p>
-          <p>
-            <label for="Title 3">Title 3</label>
-            <input id="Title 3"type="title 3" placeholder="" />
-          </p>
-          
-          <p>
-            <label for="Here is the Title">Here is the Title</label>
-            <input id="Here is the Title"type="Here is the Title" placeholder="" />
-          </p>
-          <p>
-            <label for="Here is the Title 2">Here is the Title 2</label>
-            <input id="Here is the Title 2"type="Here is the Title 2" placeholder="" />
-          </p> -->
+<head>
+  <style>
+  body {
+    padding: 25px;
+    background-color: white;
+    color: black;
+    font-size: 25px;
+  }
+  
+  .dark-mode {
+    background-color: black;
+    color: white;
+  }
+  </style>
+  </head>
+  <body>
+  
+  <h2></h2>
+  <p></p>
+  
+  <button onclick="myFunction()">☀️</button>
+  
+  <script>
+  function myFunction() {
+     var element = document.body;
+     element.classList.toggle("dark-mode");
+  }
+  </script>
+  
+  </body>
+  </html>
+  
+  <style>
+    a {
+      text-decoration: none;
+      display: inline-block;
+      padding: 8px 16px;
+    }
+    
+    a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+    
+    .previous {
+      background-color: #f1f1f1;
+      color: black;
+    }
+    
+    .next {
+      background-color: #04AA6D;
+      color: white;
+    }
+    
+    .round {
+      border-radius: 50%;
+    }
+    </style>
+    </head>
+    <body>
+    
+    <h2>Previous Button</h2>
+    
+    <a href="./index.html" class="previous">&laquo; Previous</a>
+ 
+    </body>
+    </html> 

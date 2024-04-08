@@ -31,12 +31,7 @@ function init () {
 
     const storeduserddetails = JSON.parse(localStorage.getItem('userdetails'));
 console.log(storeduserddetails)
-//lastPostTitle.value = storeduserddetails.title
-    // if (storedlastPost !== null) {
-    //     lastPost = storedlastPost;
-    // }
 
-    // renderLastPost();
 
 }
 
