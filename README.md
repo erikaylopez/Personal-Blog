@@ -1,4 +1,4 @@
-# Personal-Blog
+git status# Personal-Blog
 
 # Description
 Blog site to allow input of user name, title, and content. This information will be stored into the local storage.
